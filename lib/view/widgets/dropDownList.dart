@@ -49,7 +49,7 @@ class _DropDownListState extends State<DropDownList> {
               (index) => DropdownMenuItem(
                     value: widget.items![index],
                     child: Text(
-                      '${widget.items![index]}',
+                      '${widget.items![index].key}',
                       style: TextStyle(
                           fontFamily: "Montserrat-Medium",
                           color: Color(0xFF707070),

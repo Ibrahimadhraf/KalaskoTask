@@ -66,9 +66,18 @@ class DatabaseHelper {
   }
 
 
+  /// for dropping existing DataStore
+  dropRecord() async {
+    var dbClient = await datatBase;
+    return await dbClient.delete(tableCardRecord, where: '$columnRecordKey=?',).then((value) => getAllRecords());
+  }
+
+
+
+
   /// for updating exists values with specific key
   deleteRecord(String? valueForDeletion) async {
     var dbClient = await datatBase;
-    return await dbClient.delete(tableCardRecord, where: '$columnRecordKey=?', whereArgs: [valueForDeletion]).then((value) => getAllRecords());
+    return await dbClient.rawDelete('DELETE FROM $tableCardRecord WHERE $columnRecordKey = ?', [valueForDeletion]).then((value) => getAllRecords());
   }
 }

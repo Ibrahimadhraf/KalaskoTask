@@ -68,8 +68,10 @@ class _MyHomePageState extends State<MyHomePage> {
 
   insertToDataBase() {
     if (selectedDataModel != null) {
+      print('\n\n\n selectedDataModel != null ${selectedDataModel != null} \n\n\n');
       if (selectedDataModel?.value != null)
-        DatabaseHelper.db.inset(selectedDataModel?.value);
+        // print('\n\n\n selectedDataModel.value != null ${selectedDataModel?.value != null} \n\n\n');
+      DatabaseHelper.db.inset(selectedDataModel?.value);
     }
   }
 
@@ -208,6 +210,17 @@ class _MyHomePageState extends State<MyHomePage> {
                         text: 'Delete',
                       ),
                     ),
+                    // Container(
+                    //   padding: EdgeInsets.all(
+                    //       SizeConfig().safeBlockHorizontal! * 5),
+                    //   width: SizeConfig().screenWidth! * .5,
+                    //   height: SizeConfig().screenWidth! * .25,
+                    //   child: CustomButton(
+                    //     color: Colors.green,
+                    //     onPress: () => DatabaseHelper.db.dropRecord(),
+                    //     text: 'Drop',
+                    //   ),
+                    // ),
                   ],
                 )
               ],
