@@ -81,14 +81,10 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   deleteDataBaseRecord() {
-
-    DatabaseHelper.db.getAllRecords();
-
-
-    // if (selectedDataModel != null) {
-    //   if (selectedDataModel?.value != null)
-    //     DatabaseHelper.db.deleteRecord(selectedDataModel?.value.key);
-    // }
+    if (selectedDataModel != null) {
+      if (selectedDataModel?.value != null)
+        DatabaseHelper.db.deleteRecord(selectedDataModel?.value.key);
+    }
   }
 
   @override
